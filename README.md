@@ -15,3 +15,5 @@ rootFolder/
 |--|--|--img2.png
 |--|--|--etc.png
 ```
+<u>Wish List</u>
++ Simple GUI prompts
