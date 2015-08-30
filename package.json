@@ -5,7 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "chalk": "^1.0.0",
-    "inquirer": "^0.8.2",
+    "inquirer": "^0.8.5",
     "nightmare": "^1.8.0"
   },
   "devDependencies": {
