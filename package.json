@@ -8,7 +8,9 @@
     "inquirer": "^0.8.2",
     "nightmare": "^1.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
   "scripts": {
     "test": "mocha"
   },
