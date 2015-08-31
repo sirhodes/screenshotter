@@ -1,29 +1,25 @@
-var mocha = require('mocha');
-var assert = require('assert');
+var test = require('ava');
+
+// change the current working directory so that file refs make sense
+process.chdir( __dirname );
 
 var convertCsvToTxt = require('../lib/convertCsvToTxt');
+var testLinks = convertCsvToTxt('./testData.csv');
+var badLinks = convertCsvToTxt('./testData.xml');
 
-describe('converting the file from CSV to TXT', function(){
+test("should expose a function", function ( t ) {
+  t.assert(typeof convertCsvToTxt === 'function');
+  t.end();
+});
 
-  var testLinks = convertCsvToTxt('./test/testData.csv');
-  var badLinks = convertCsvToTxt('./test/testData.xml');
+test('CSV file was converted into an Array', function ( t ) {
+  t.plan(2);
+  t.assert(testLinks instanceof Array);
+  t.is(testLinks.length, 4);
+  t.end();
+});
 
-  it('should be of an Object of arrays', function(){
-    assert.equal(typeof testLinks, 'object');
-  });
-
-  it('should not be an empty Array', function(){
-    assert.equal(testLinks.length, 4);
-  });
-
-  it('should strip the last element from the array if it is an empty String', function(){
-    assert.notEqual(testLinks[testLinks.length-1], '');
-  });
-
-  it('shouldn\'t attempt to convert anything but CSV files', function(){
-    assert.equal(badLinks, "You didn\'t pass in a file with a .CSV extension");
-    assert.equal(typeof badLinks, 'string');
-  });
-
-
+test('the last element from the array is not an empty String', function ( t ) {
+  t.assert(testLinks[testLinks.length-1] !==  '');
+  t.end();
 });
