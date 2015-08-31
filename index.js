@@ -1,4 +1,6 @@
 var inquirer = require('inquirer');
+// var pageres = require('pageres');
+var filesToRead = [];
 
 var convertCsvToTxt = require('./lib/convertCsvToTxt.js');
 
@@ -30,7 +32,9 @@ inquirer
     ],
     answersCallback
   );
+
 function answersCallback ( answers ) {
   console.log(answers);
-  console.log(convertCsvToTxt(answers.fileToRead));
+  filesToRead = returnFileExtension( answers.fileToRead ) === '.txt' ? answers.fileToRead : convertCsvToTxt( answers.fileToRead );
+  return filesToRead;
 }
