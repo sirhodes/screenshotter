@@ -11,6 +11,6 @@ test("should expose a returnFileExtension function", function ( t ) {
 });
 
 test("should return CSV if file extension is .csv", function ( t ) {
-  t.is( returnFileExtension('blobity.jpg.txt.png.js.csv') , '.asdcsv');
+  t.is( returnFileExtension('blobity.jpg.txt.png.js.csv') , 'csv');
   t.end();
 });
