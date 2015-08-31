@@ -9,11 +9,11 @@
     "nightmare": "^1.8.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
+    "ava": "^0.1.0",
     "pageres": "^2.1.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
