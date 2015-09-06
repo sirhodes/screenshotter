@@ -6,11 +6,11 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "inquirer": "^0.8.5",
-    "nightmare": "^1.8.0"
+    "nightmare": "^1.8.0",
+    "pageres": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "^0.1.0",
-    "pageres": "^2.1.0"
+    "mocha": "^2.3.0"
   },
   "scripts": {
     "test": "ava test/*.js"
