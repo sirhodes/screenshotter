@@ -2,7 +2,7 @@
   "name": "screenshotter",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
   "dependencies": {
     "chalk": "^1.0.0",
     "inquirer": "^0.8.5",
@@ -10,6 +10,7 @@
     "pageres": "^2.1.0"
   },
   "devDependencies": {
+    "electron-prebuilt": "^0.31.2",
     "mocha": "^2.3.0"
   },
   "scripts": {
