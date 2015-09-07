@@ -16,4 +16,8 @@ describe('returning the file extension', function(){
   it("should return null if no extension", function (){
     assert.equal( returnFileExtension('blobity') , null );
   });
+
+  it("should return nothing if last index is a period", function(){
+    assert.equal( returnFileExtension('blobity.'), '');
+  });
 });
