@@ -14,7 +14,7 @@ describe('convert CSV to TXT function', function (){
 
   it('CSV file was converted into an Array', function (){
     assert.equal( testLinks instanceof Array, true );
-    assert.equal( testLinks.length, 4 );
+    assert.equal( testLinks.length, 7 );
   });
 
   it('the last element from the array is not an empty String', function (){
