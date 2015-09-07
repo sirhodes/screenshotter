@@ -1,8 +1,12 @@
 var inquirer = require('inquirer');
-// var pageres = require('pageres');
+// check file input type
+var returnFileExtension = require('./lib/returnFileExtension.js');
+// read file, map to string
+var convertCsvToTxt = require('./lib/convertCsvToTxt.js');
+
+var Pageres = require('pageres');
 var filesToRead = [];
 
-var convertCsvToTxt = require('./lib/convertCsvToTxt.js');
 
 inquirer
   .prompt(
@@ -28,6 +32,11 @@ inquirer
           "Generic Monitor (1024x720)",
           "Generic Monitor (1440x900)",
         ]
+      },
+      {
+        type: "confirm",
+        name: "crop",
+        message: "Do you want to crop to each device?"
       }
     ],
     answersCallback
@@ -35,6 +44,23 @@ inquirer
 
 function answersCallback ( answers ) {
   console.log(answers);
-  filesToRead = returnFileExtension( answers.fileToRead ) === '.txt' ? answers.fileToRead : convertCsvToTxt( answers.fileToRead );
-  return filesToRead;
+  arrayOfLinks = returnFileExtension( answers.fileToRead ) === '.txt' ?
+    answers.fileToRead :
+    convertCsvToTxt( answers.fileToRead );
+  arrayOfLinks.forEach(takeScreenshot);
+}
+
+function takeScreenshot ( item ) {
+  return new Pageres(
+      {
+        delay: 3
+      }
+    )
+    .src(item, ['iphone 5s'], {crop: false})
+    .dest(__dirname + '/screenshots')
+    .run(
+      function(err){
+        return err ? (console.log(err), err): null;
+      }
+    );
 }
