@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "dependencies": {
-    "chalk": "1.0.0",
-    "inquirer": "0.8.5",
-    "nightmare": "1.8.0",
-    "pageres": "2.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo 'No tests are being run!' && exit 0"
