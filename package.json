@@ -2,8 +2,10 @@
   "name": "screenshotter",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
-  "dependencies": {},
+  "main": "index.js",
+  "dependencies": {
+    "pageres": "4.1.1"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo 'No tests are being run!' && exit 0"
