@@ -10,7 +10,7 @@
     "ava": "0.13.0"
   },
   "scripts": {
-    "test": "echo 'No tests are being run!' && exit 0"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
