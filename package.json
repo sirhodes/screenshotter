@@ -7,10 +7,11 @@
     "pageres": "4.1.1"
   },
   "devDependencies": {
-    "ava": "0.13.0"
+    "ava": "0.13.0",
+    "tap-nyan": "0.0.2"
   },
   "scripts": {
-    "test": "ava"
+    "test": "ava --tap | tap-nyan"
   },
   "repository": {
     "type": "git",
