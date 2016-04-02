@@ -10,7 +10,7 @@ function takeScreenshot(url, settings) {
     }
 
     new Pageres({delay: settings.delay || 2})
-      .src(url, settings.devices || ['1024x768'], {settings.crop || false})
+      .src(url, (settings.devices || ['1024x768']))
       .dest(settings.dest || __dirname)
       .run()
       .then(resolve, reject);
